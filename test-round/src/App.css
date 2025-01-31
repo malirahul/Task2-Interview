@@ -1,38 +1,63 @@
+/* General styles */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Data Grid Styles */
+.data-grid {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.data-grid th,
+.data-grid td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.data-grid th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  user-select: none;
+}
+
+.data-grid th .sortable {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.data-grid th .sortable:hover {
+  background-color: #e0e0e0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.data-grid th.sorted {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.data-grid .selected {
+  background-color: #d3e9ff;
+}
+
+/* Input filter styles */
+.text-filter {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Virtualized list row styles */
+tr {
+  transition: background-color 0.3s ease;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
 }
